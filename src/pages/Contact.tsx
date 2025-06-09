@@ -19,21 +19,46 @@ const Contact = () => {
     practiceArea: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     toast({
+//       title: "Message Sent",
+//       description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+//     });
+//     setFormData({
+//       name: '',
+//       email: '',
+//       phone: '',
+//       subject: '',
+//       message: '',
+//       practiceArea: ''
+//     });
+//   };
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(`http://localhost:8080/api/contact/submit`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      practiceArea: ''
-    });
-  };
+
+    if (response.ok) {
+      alert('Message sent successfully!');
+      setFormData({ name: "", email: "", phone: "", practiceArea: "", subject: "", message: "" });
+    } else {
+      alert('Something went wrong. Please try again later.');
+    }
+  } catch (error) {
+    console.error('Form submit error:', error);
+    alert('Error submitting form.');
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({

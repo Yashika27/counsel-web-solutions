@@ -95,11 +95,6 @@ const Index = () => {
                     <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link to="/about">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-charcoal">
-                    Learn More About Us
-                  </Button>
-                </Link>
               </div>
             </div>
             <div className="relative">
