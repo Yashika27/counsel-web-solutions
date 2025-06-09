@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -90,13 +89,17 @@ const Index = () => {
                 Premier legal representation for individuals and businesses. Our experienced attorneys deliver strategic solutions and exceptional outcomes for complex legal challenges.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gold hover:bg-gold-dark text-charcoal font-semibold">
-                  Schedule Free Consultation
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-charcoal">
-                  Learn More About Us
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" className="bg-gold hover:bg-gold-dark text-charcoal font-semibold">
+                    Schedule Free Consultation
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/about">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-charcoal">
+                    Learn More About Us
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -254,10 +257,12 @@ const Index = () => {
           <p className="text-xl text-charcoal mb-8 max-w-2xl mx-auto">
             Schedule your free consultation today and let our experienced legal team help you navigate your legal challenges.
           </p>
-          <Button size="lg" className="bg-charcoal hover:bg-gray-800 text-white font-semibold">
-            Schedule Your Free Consultation
-            <ChevronRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" className="bg-charcoal hover:bg-gray-800 text-white font-semibold">
+              Schedule Your Free Consultation
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
