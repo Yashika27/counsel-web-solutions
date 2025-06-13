@@ -39,7 +39,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
   try {
-    const response = await fetch(`${process.env.REACT_APP_API_BASE}/test/contact/submit`, {
+    const response = await fetch(`https://property-intelligence-solutions.vercel.app/api/contact/submit`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
